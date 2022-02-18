@@ -1,7 +1,8 @@
+/* eslint-disable max-len */
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
 
-console.log(userData,"<>>>>userData")
+console.log(userData, "<>>>>userData")
 // An example of how you tell webpack to use a CSS file
 import './css/styles.css';
 
