@@ -2,7 +2,7 @@ class UserRepository {
   constructor(data) {
     this.data = data;
   }
-  lookUpData(id) {
+  findUserData(id) {
     let index = id - 1;   
     return this.data[index];
   }

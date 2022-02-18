@@ -18,16 +18,16 @@ describe('UserRepository', () => {
   it('should return a user/s data when given an ID as a parameter',  () => {
     const userRepo = new UserRepository(userData);
 
-    userRepo.lookUpData(1);
+    userRepo.findUserData(1);
    
-    expect(userRepo.lookUpData).to.be.a('function');
-    expect(userRepo.lookUpData(1)).to.deep.equal(userData[0]);
+    expect(userRepo.findUserData).to.be.a('function');
+    expect(userRepo.findUserData(1)).to.deep.equal(userData[0]);
   });
 
   it('should return average step goal amongst all users',  () => {
     const userRepo = new UserRepository(userData);
 
     expect(userRepo.getAverageUserStepGoal).to.be.a('function');
-    expect(userRepo.getAverageUserStepGoal()).to.equal(335000)
+    expect(userRepo.getAverageUserStepGoal()).to.equal(335000);
   });
 });
