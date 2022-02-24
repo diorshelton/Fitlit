@@ -3,3 +3,11 @@ body, html {
   background-repeat: no-repeat;
   height: 100%;
 }
+.contact-card {
+  border: 200px, 35px;
+  width: 300px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5;
+  padding: 20px;
+}
