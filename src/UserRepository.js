@@ -11,7 +11,7 @@ class UserRepository {
     this.data.forEach(users => {
       averageSteps += users.dailyStepGoal;
     })
-    return averageSteps;
+    return averageSteps / this.data.length;
   }
 }
 

@@ -17,4 +17,28 @@ import userData from './data/users';
 
 import UserRepository from './UserRepository';
 
-import welcomeMessage from './index';
+import User from './User';
+
+const userRepo = new UserRepository(userData);
+
+const userObject = userRepo.findUserData(1);
+
+const sampleUser = new User(userObject);
+
+
+
+function sampleUserCard() {
+  let welcome = document.getElementById('user-welcomed');
+  let fullName = document.querySelector('.contact-name');
+  let address = document.querySelector('.contact-address');
+  let email = document.querySelector('.contact-email');
+  let stepGoal = document.querySelector('.user-steps');
+  let avgStepGoal = document.querySelector('.avg-steps-per-user');
+  welcome.innerHTML = sampleUser.getUserFirstName();
+  fullName.innerText = " " + sampleUser.name;
+  address.innerText = " " + sampleUser.address;
+  email.innerText = " " + sampleUser.email;
+  stepGoal.innerText = " " + sampleUser.dailyStepGoal + ' steps';
+  avgStepGoal.innerText = userRepo.getAverageUserStepGoal();
+}
+sampleUserCard();
