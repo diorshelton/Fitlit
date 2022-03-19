@@ -34,7 +34,8 @@ function sampleUserCard() {
   let email = document.querySelector('.contact-email');
   let stepGoal = document.querySelector('.user-steps');
   let avgStepGoal = document.querySelector('.avg-steps-per-user');
-  welcome.innerHTML = sampleUser.getUserFirstName();
+
+  welcome.innerText`` = sampleUser.getUserFirstName();
   fullName.innerText = " " + sampleUser.name;
   address.innerText = " " + sampleUser.address;
   email.innerText = " " + sampleUser.email;

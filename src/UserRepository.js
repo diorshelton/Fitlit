@@ -3,8 +3,7 @@ class UserRepository {
     this.data = data;
   }
   findUserData(id) {
-    let index = id - 1;   
-    return this.data[index];
+    return this.data[id - 1];
   }
   getAverageUserStepGoal() {
     let averageSteps = 0;

@@ -28,6 +28,6 @@ describe('UserRepository', () => {
     const userRepo = new UserRepository(userData);
 
     expect(userRepo.getAverageUserStepGoal).to.be.a('function');
-    expect(userRepo.getAverageUserStepGoal()).to.equal(335000);
+    expect(userRepo.getAverageUserStepGoal()).to.equal(6700);
   });
 });

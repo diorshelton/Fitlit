@@ -9,8 +9,10 @@ body, html {
   background-color: white;
   border: 1px solid black;
   border-radius: 3.3%;
-  padding: 20px;
+  padding: 2.5%;
+  margin:0;
 }
+
 .user-welcomed {
   color: red;
 }
