@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { expect } from 'chai';
 import hydrationData from '../src/data/hydration';
 import HydrationRepository from '../src/HydrationRepository'
@@ -30,5 +31,26 @@ describe('HydrationRepository', () => {
       [{userID: 1, date: '2019/06/15', numOunces: 37}, 
         {userID: 1, date: '2019/06/16', numOunces: 69}
       ]);
+  })
+  it('should return total oz of water user has consumed', () => {
+    const hydrationRepo = new HydrationRepository(hydrationData);
+
+    const total = hydrationRepo.totalConsumed(1);
+
+    expect(total).to.equal(106);
+  })
+  it('should count the number of days that a user has hydration records', () => {
+    const hydrationRepo = new HydrationRepository(hydrationData);
+    
+    const days = hydrationRepo.totalDays(1);
+
+    expect(days).to.equal(2);
+  })
+  it('should return the average fluid ounces consumed per day for all time', () => {
+    const hydrationRepo = new HydrationRepository(hydrationData);
+    
+    let totalAverage = hydrationRepo.allTimeDailyAverage(1);
+
+    expect(totalAverage).to.equal(53);
   })
 });
