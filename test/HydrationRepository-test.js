@@ -17,7 +17,7 @@ describe('HydrationRepository', () => {
   it('should count the number of elements', () => {
     const hydrationRepo = new HydrationRepository(hydrationData);
 
-    expect(hydrationRepo.length).to.equal(22);
+    expect(hydrationRepo.length).to.equal(77);
   })
 
   it('should return a user\'s hydration data', () => {
@@ -28,8 +28,14 @@ describe('HydrationRepository', () => {
 
     expect(hydrationRepo.findUserData(2)).to.be.an('Array');
     expect(userOne).to.deep.equal(
-      [{userID: 1, date: '2019/06/15', numOunces: 37}, 
-        {userID: 1, date: '2019/06/16', numOunces: 69}
+      [
+        { userID: 1, date: '2019/06/15', numOunces: 37 },
+        { userID: 1, date: '2019/06/16', numOunces: 69 },
+        { userID: 1, date: '2019/06/17', numOunces: 96 },
+        { userID: 1, date: '2019/06/18', numOunces: 61 },
+        { userID: 1, date: '2019/06/19', numOunces: 91 },
+        { userID: 1, date: '2019/06/20', numOunces: 50 },
+        { userID: 1, date: '2019/06/21', numOunces: 50 }
       ]);
   })
   it('should return total oz of water user has consumed', () => {
@@ -37,20 +43,20 @@ describe('HydrationRepository', () => {
 
     const total = hydrationRepo.totalConsumed(1);
 
-    expect(total).to.equal(106);
+    expect(total).to.equal(454);
   })
   it('should count the number of days that a user has hydration records', () => {
     const hydrationRepo = new HydrationRepository(hydrationData);
     
     const days = hydrationRepo.totalDays(1);
 
-    expect(days).to.equal(2);
+    expect(days).to.equal(7);
   })
   it('should return the average fluid ounces consumed per day for all time', () => {
     const hydrationRepo = new HydrationRepository(hydrationData);
     
     let totalAverage = hydrationRepo.allTimeDailyAverage(1);
 
-    expect(totalAverage).to.equal(53);
+    expect(totalAverage).to.equal(64.8);
   })
 });
