@@ -24,7 +24,7 @@ class HydrationRepository {
   allTimeDailyAverage(id) {
     let consumed = this.totalConsumed(id);
     let numberOfDays = this.totalDays(id);
-    return consumed / numberOfDays;
+    return  Math.round(consumed / numberOfDays);
   }
 }
 module.exports = HydrationRepository;

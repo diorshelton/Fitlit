@@ -56,7 +56,6 @@ describe('HydrationRepository', () => {
     const hydrationRepo = new HydrationRepository(hydrationData);
     
     let totalAverage = hydrationRepo.allTimeDailyAverage(1);
-
-    expect(totalAverage).to.equal(64.8);
+    expect(hydrationRepo.allTimeDailyAverage(1)).to.equal(65);
   })
 });
